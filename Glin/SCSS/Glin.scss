@@ -1,32 +1,27 @@
-$Default:rgb(0, 119, 255);
-$Line: rgba(0, 0, 0, 0.251);
-$Empty:rgba(255, 255, 255, 0);
+@charset "UTF-8";
+$C1:rgb(0, 119, 255);
+$C2: rgba(0, 0, 0, 0.251);
+$C3:rgba(255, 255, 255, 0);
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
 body {
     margin: 0;
     width: 100%;
 }
 
 h1 {
-    margin-block-start: 0.67em;
-    margin-block-end: 0.67em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    letter-spacing: 2px;
     margin-top: 0;
-    margin-bottom: 0.5rem;
     text-align: center;
     font-size: 6.2vw;
-    color: $Default;
-    display: block;
-    border: solid 1px $Line;
+    color: $C1;
     text-align: center;
-    border: $Default 5px solid;
-    margin: 0;
-    background: -webkit-linear-gradient($Default, $Empty);
+    border: $C1 5px solid;
+    background: -webkit-linear-gradient($C1, $C3);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 5px $Line;
-    box-shadow: 0 2px 5px $Line;
+    text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5), 1px 1px 0 $C2, 1px -1px 0 $C2, -1px 1px 0 $C2, -1px -1px 0 $C2, 1px 0px 0 $C2, 0px 1px 0 $C2, -1px 0px 0 $C2, 0px -1px 0 $C2;
 }
 
 ol {
@@ -64,7 +59,7 @@ $shake: 12;
 //Les rotations
 $turn: 12;
 @mixin turning-x {
-    @for $ii from 1 through $shake {
+    @for $ii from 1 through $turn {
         .turn-#{$ii} {
             transform: rotateZ(#{$ii*30}deg);
             transform-origin: center center;
@@ -74,35 +69,42 @@ $turn: 12;
 
 @include turning-x;
 .fenetre_texte {
-    transform: perspective(1400px) scale(2.0) skew(3deg, 8deg);
+    transform: perspective(1400px) scale(1.1) skew(3deg, 8deg);
     transform-origin: center center;
-    box-shadow: -2px 2px 5px $Line;
-    border: 1px solid $Line;
-    border-bottom: 2px solid $Line;
+    box-shadow: -2px 2px 5px $C2;
+    border: 1px solid $C2;
+    border-bottom: 2px solid $C2;
     display: table-cell;
-    position: absolute;
-    left: 25px;
-    background-color: $Empty;
+    background-color: $C3;
+    width: 250px;
+    height: 100%;
+    text-align: center;
+    margin: auto;
 }
 
 .bannar {
+    display: flex;
     box-sizing: content-box;
-    height: 5%;
     cursor: pointer;
     padding: 20px;
     border: 0.05em solid;
     border-radius: 18% 18% 95% 95% / 90% 90% 75% 75%;
-    color: $Empty;
-    text-align: center;
+    font-size: 5vh;
     text-overflow: clip;
-    word-spacing: 4em;
-    background: linear-gradient(180deg, rgba(0, 187, 255, 0.56) 0, rgba(255, 255, 255, 0.59) 8%, rgba(0, 187, 255, 0.52) 20%, rgba(0, 187, 255, 0.41) 100%), linear-gradient(180deg, rgba(0, 187, 255, 1) 0, rgba(0, 187, 255, 1) 81%, $Empty 90%, rgba(0, 187, 255, 1) 100%);
+    background: linear-gradient(180deg, rgba(0, 187, 255, 0.56) 0, rgba(255, 255, 255, 0.59) 8%, rgba(0, 187, 255, 0.52) 20%, rgba(0, 187, 255, 0.41) 100%), linear-gradient(180deg, rgba(0, 187, 255, 1) 0, rgba(0, 187, 255, 1) 81%, $C3 90%, rgba(0, 187, 255, 1) 100%);
     background-position: 50% 50%, 53% 51%;
     background-origin: border-box, padding-box;
     background-clip: border-box, border-box;
     background-size: auto auto, auto auto;
-    box-shadow: 0 0.1em 0.5em 0 rgba(0, 0, 0, 0.49);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 1);
+    span,
+    a,
+    div {
+        text-align: center;
+        margin: auto;
+        height: 5%;
+        color: white;
+        text-shadow: 2px 2px 0 $C2, 2px -2px 0 $C2, -2px 2px 0 $C2, -2px -2px 0 $C2, 2px 0px 0 $C2, 0px 2px 0 $C2, -2px 0px 0 $C2, 0px -2px 0 $C2;
+    }
 }
 
 @keyframes rainbow {
@@ -118,50 +120,6 @@ $turn: 12;
 
 .rainbow {
     animation: 2s rainbow infinite alternate-reverse;
-}
-
-.interdit {
-    display: inline-block;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    width: 1.75em;
-    height: 1.75em;
-    position: relative;
-    border: 0.15em solid #ba1a1a;
-    -webkit-border-radius: 1em;
-    border-radius: 1em;
-    font: normal 8em/normal Arial, Helvetica, sans-serif;
-    color: rgba(0, 0, 0, 1);
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    z-index: 6;
-    -webkit-box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.4);
-    box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.4);
-    &::after {
-        display: inline-block;
-        -webkit-box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        box-sizing: content-box;
-        z-index: 7;
-        width: 1.85em;
-        height: 0.15em;
-        position: absolute;
-        content: "";
-        top: 0.8em;
-        left: -0.05em;
-        border: none;
-        font: normal 100%/normal Arial, Helvetica, sans-serif;
-        color: rgba(0, 0, 0, 1);
-        -o-text-overflow: clip;
-        text-overflow: clip;
-        background: #ba1a1a;
-        -webkit-box-shadow: 4px 4px 6px 1px rgba(0, 0, 0, 0.4);
-        box-shadow: 4px 4px 6px 1px rgba(0, 0, 0, 0.4);
-        text-shadow: none;
-        -webkit-transform: rotateZ(-45deg);
-        transform: rotateZ(-45deg);
-    }
 }
 
 .texte-feu {
@@ -198,15 +156,18 @@ $turn: 12;
 }
 
 .spoiler {
-    color: $Empty;
-    transition: color 1s;
+    background: rgb(207, 207, 207);
+    color: rgb(207, 207, 207);
+    transition: all 1s;
     &:hover {
         color: black;
+        background: rgba(0, 0, 0, 0);
     }
 }
 
 .loading {
-    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
     animation: x 0.5s infinite;
 }
 
@@ -235,17 +196,22 @@ $turn: 12;
     border: 16px solid #ffffff00;
     border-top: 16px solid #3498db;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 1.5s linear infinite, spin_stroke 1.5s linear infinite alternate-reverse;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s infinite linear, spin_stroke 2s linear infinite alternate-reverse;
+    margin: auto;
+    transform-origin: 50% 50%;
 }
 
 @keyframes spin {
     0% {
-        transform: rotate(0deg);
+        transform: translate(0px, -10px)rotate(0deg);
+    }
+    50% {
+        transform: translate(0px, -60px)rotate(180deg);
     }
     100% {
-        transform: rotate(360deg);
+        transform: translate(0px, -10px)rotate(360deg);
     }
 }
 
@@ -256,11 +222,6 @@ $turn: 12;
     100% {
         box-shadow: -5px 0px 0 #3498db, 5px 0px 0 #b4e1ff;
     }
-}
-
-.micro_drag {
-    position: absolute;
-    cursor: pointer;
 }
 
 .button {
@@ -294,8 +255,14 @@ $turn: 12;
 }
 
 .tremblote {
-    position: absolute;
-    animation: tremble 1s infinite;
+    position: relative;
+    padding: 10px;
+    span,
+    a,
+    div {
+        position: absolute;
+        animation: tremble 1s infinite;
+    }
 }
 
 @keyframes tremble {
@@ -336,9 +303,148 @@ $turn: 12;
 }
 
 .cadre_rond {
+    display: flex;
     border-radius: 50%;
-    border: 2px white;
+    border: 2px $C1 solid;
     width: 50px;
     height: 50px;
     background-position: center;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    span,
+    a,
+    div {
+        margin: auto;
+    }
+}
+
+b strong {
+    font-family: 'Anton', sans-serif;
+}
+
+i em {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.etire_texte {
+    letter-spacing: 0px;
+    transition: 2s letter-spacing;
+    &:hover {
+        letter-spacing: 20px;
+    }
+}
+
+$gridline: 12;
+@mixin gridline-x {
+    @for $ii from 1 through $gridline {
+        .gridline-#{$ii} {
+            text-align: center;
+            margin: 5px;
+            display: grid;
+            grid-template-columns: repeat(#{$ii},
+            1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(auto, auto);
+            max-height: 500px;
+            div {
+                grid-row: 1;
+                grid-gap: #{$ii/10}em;
+            }
+        }
+    }
+}
+
+@include gridline-x;
+.centrer {
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin: auto;
+}
+
+.entourer {
+    text-shadow: $C2 1px 1px, $C2 -1px 1px, $C2 -1px -1px, $C2 1px -1px;
+}
+
+.encadrer {
+    background-color: white;
+    z-index: 2;
+    font-size: 1.2rem;
+    width: 245px;
+    border-bottom: solid 1px black;
+    border-right: solid 2px black;
+    box-shadow: 0 1px 5px black;
+}
+
+$scrollvar: 12;
+@mixin scrollvar-y {
+    @for $ii from 0 through $scrollvar {
+        .scrollbox-#{$ii} {
+            scroll-snap-type: y mandatory;
+            width: 85%;
+            margin: auto auto;
+            height: #{$ii*5}vh;
+            padding: 10px;
+            overflow-y: scroll;
+            margin-bottom: 25px;
+            background-color: rgba(0, 0, 0, 0.048);
+            &::-webkit-scrollbar {
+                width: 45px;
+            }
+            &::-webkit-scrollbar-track {
+                border: 1px solid $C3;
+                box-shadow: inset 0 0 5px $C1;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-track-piece {
+                background-color: $C2;
+                border-radius: 10px;
+                border: 1px solid $C3;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $C3;
+                border-radius: 10px;
+                box-shadow: inset -2px 0px 10px $C1, inset 0 2px 5px $C1;
+                &:hover {
+                    background-color: $C3;
+                    box-shadow: inset -2px 0px 10px $C1, inset 0 1px 4px $C1;
+                }
+            }
+        }
+    }
+}
+
+@include scrollvar-y;
+.present {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-right: 1vw;
+    padding-left: 5px;
+    display: inline-flex;
+    border-left: 10px ridge $C1;
+    border-radius: 40px 18px 0px 40px;
+    background: rgb(226, 226, 226);
+}
+
+.text-profond {
+    color: transparent;
+    background: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    font-size: 5vh;
+    text-shadow: 0px 3px 3px rgba(255, 255, 255, 0.5), 1px 1px 0 $C2, 1px -1px 0 $C2, -1px 1px 0 $C2, -1px -1px 0 $C2, 1px 0px 0 $C2, 0px 1px 0 $C2, -1px 0px 0 $C2, 0px -1px 0 $C2;
+}
+
+.boite {
+    height: 25vh;
+    width: 25vw;
+    margin: auto;
+    padding: 20vh;
+    text-align: left;
 }

@@ -7,12 +7,58 @@
 </head>
 
 <body>
-    <h1>Glin</h1>
+    <h1>Glin-Framework</h1>
 
-    <div class="cadre_rond" style="background: url('https://pbs.twimg.com/profile_banners/970480759/1544479109/600x200')">
-    </div>
 
-    <div class="micro_drag">PASSE</div>
-    <script src="Glin/JS/Glin.js"></script>
 
+    <section class="gridline-5">
+        <a class="texte-feu">Texte en feu</a>
+        <span class="rien">Rien n'est affiché(idéal pour le JS)</span>
+        <span class="separe">Separation avec le reste du texte</span>
+        <span class="spoiler">UN SPOILER !!!</span>
+        <span class="text-profond">Un texte profond !</span>
+        <span class="etire_texte">Un texte à étirer !</span>
+
+    </section>
+
+    <section class="gridline-1 boite">
+        <ol class="rainbow">
+            <script>
+                let generate = " ";
+                for (let ii = 0; ii < 12; ii++) {
+                    generate += '<li class="turn-' + ii + '"><span class="sh-' + ii + '">Shake-' + ii + '</span></li>';
+                }
+                document.write(generate);
+            </script>
+        </ol>
+    </section>
+    <section class="gridline-4">
+        <span class="entourer">Quand un texte coloré est illisible sur un fond trop claire MAIS que la couleur est très importante, il vaut mieux l'entourer !</span>
+        <div class="encadrer">Un encadrer</div>
+        <div class="present">Une note</div>
+        <div class="cadre_rond"><span>mot</span></div>
+    </section>
+    <section class="gridline-10">
+        <script>
+            let generate_ = " ";
+            for (let ii = 1; ii < 11; ii++) {
+                generate_ += '<div class="scrollbox-' + ii + '"><div> Une scrollbox de ' + ii * 5 + ' vh d\'hauteur</div></div>';
+            }
+            document.write(generate_);
+        </script>
+    </section>
+
+    <section class="gridline-5">
+        <div class="tremblote"><span>Un texte qui tremble</span></div>
+        <div class="titre">Un titre</div>
+        <div class="button">Un bouton</div>
+        <div class="spinner"></div>
+        <div class="loading"></div>
+
+    </section>
+    <section class="gridline-2">
+        <div class="bannar"><span>Bannière (BETA)</span></div>
+        <div class="fenetre_texte"><span>Fenêtre (BETA)</span></div>
+
+    </section>
 </body>
