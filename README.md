@@ -6,17 +6,12 @@ Je fais TOUJOURS les même choses sur mes sites webs et devoir copier-coller mes
 
 ## Les différentes fonctionnalitées
 
-```
-class="micro_drag"
-```
-Rend l'élément bougeable au cliquer-glisser ET respirant avec le microphone !
 
 
 ```
 h1
 ```
-Génère un titre prenant toute la longueur de la page avec un effet de dégradé sur le texte et les bords !
-
+Génère un titre prenant toute la longueur de la page avec un effet de dégradé et de profondeur sur le texte et les bords !
 
 ```
 ol
@@ -66,15 +61,9 @@ Sous 12 niveaux d'angles, permet de tourner les éléments !
 
 
 ```
-class="fenetre_texte"
-```
-Permet d'affcher un texte en biais comme une fenêtre !
-
-
-```
 class="bannar"
 ```
-Imite l'aspect du h1 !
+Fait une bannière pour séparer les blocs !
 
 
 ```
@@ -106,6 +95,28 @@ class="spoiler"
 ```
 Cache le texte sauf si on passe la souris dessus !
 
+
+```
+class="fenêtre-texte"
+```
+Ajoute un cadre en perspective autour d'un texte !
+
+```
+class="gridline-1"
+class="gridline-2"
+class="gridline-3"
+class="gridline-4"
+class="gridline-5"
+class="gridline-6"
+class="gridline-7"
+class="gridline-8"
+class="gridline-9"
+class="gridline-10"
+class="gridline-11"
+class="gridline-12"
+```
+
+Sous 12 emplacements, permet d'aligner sur une ligne les éléments !
 
 
 
