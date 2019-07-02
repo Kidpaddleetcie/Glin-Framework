@@ -119,4 +119,28 @@ class="gridline-12"
 Sous 12 emplacements, permet d'aligner sur une ligne les éléments !
 
 
+```
+class="cadre_rond"
+```
+Ajoute un cadre rond autour d'un mot !
+
+
+```
+class="entourer"
+```
+Ajoute un bord noir tout autour du texte pour augmenter sa visibilité !
+
+
+```
+class="present"
+```
+Créer un cadre pour les notes, les informations à préciser !
+
+```
+class="text-profond"
+```
+Créer un texte gris claire avec une profondeur ayant des bords internes gris foncés !
+
+
+
 
